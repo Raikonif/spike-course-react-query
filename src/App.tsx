@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div>
-      {query.isLoading ? (
+      {query.isFetching ? (
         <h1>Loading...</h1>
       ) : (
         <h2>Random Number: {query.data} </h2>
@@ -36,8 +36,8 @@ function App() {
         <h3>Random Number: {`${query.error}`}</h3>
       )}
 
-      <button onClick={() => query.refetch()} disabled={query.isLoading}>
-        {query.isLoading ? "..." : "Generate new number"}
+      <button onClick={() => query.refetch()} disabled={query.isFetching}>
+        {query.isFetching ? "..." : "Generate new number"}
       </button>
     </div>
   );
